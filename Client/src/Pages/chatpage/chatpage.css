@@ -1,0 +1,70 @@
+.Chatpage {
+        height: 100%;
+        width: 100%;
+        display: flex; /* Enabled flexbox layout */
+        flex-direction: column; /* Align children in a column */
+        align-items: center;
+        justify-content: center;
+    
+        .wrapper {
+            overflow-y: scroll;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            scroll-behavior: smooth;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 100%;
+    
+            .chat {
+                margin: 0 auto; /* Center horizontally */
+                position: relative;
+                background-color: transparent;
+                width: 60vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start; /* Align content at the top */
+                align-items: center;
+                height: auto; /* Adjust height based on content */
+                gap: 10px;
+    
+                p, li {
+                    margin: 10px 0px;
+                }
+    
+                .message {
+                    align-self: flex-start;
+                    margin: 10px;
+                    padding: 15px 30px;
+                    background-color: transparent;
+                    border-radius: 20px 20px 20px 0;
+                    color: white;
+                    /* Uncomment the following line to enable shadow */
+                    /* box-shadow: 2px 4px 5px #2c2c2c; */
+                }
+    
+                .message.user {
+                    align-self: flex-end;
+                    background-color: #2c2c2c;
+                    border-radius: 20px 20px 0 20px;
+                    color: white;
+                }
+    
+                .message::before {
+                    border-top: 10px solid wheat;
+                    border-left: none;
+                    border-bottom: none;
+                }
+    
+                /* Tail for the outgoing message */
+                .message.user::before {
+                    border-top: 10px solid #2c2c2c;
+                    border-right: none;
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+    
